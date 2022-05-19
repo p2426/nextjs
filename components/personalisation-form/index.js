@@ -1,13 +1,10 @@
 import styles from '../../styles/PersonalisationForm.module.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 const PersonalisationForm = () => {
 
-    const [choices, setChoices] = useState({
-        animal: null,
-        day: null
-    });
+    const [choices, setChoices] = useState({});
 
     const handleChange = (e) => {
         const newChoices = {};
@@ -17,10 +14,6 @@ const PersonalisationForm = () => {
             ...newChoices
         });
     };
-
-    useEffect(() => {
-        console.log(choices);
-    }, [choices]);
 
     return (
         <div className={styles.container}>
@@ -48,7 +41,7 @@ const PersonalisationForm = () => {
                 <label htmlFor='yesterday'>Yesterday</label>
             </div>
 
-            <Link href={{pathname: '/profile', query: choices}}>Go to profile</Link>
+            <Link href={{ pathname: '/profile', query: choices }}>See our newsletter!</Link>
         </div>
     );
 }

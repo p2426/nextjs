@@ -2,6 +2,7 @@ import Layout from '../../components/layout'
 import Link from 'next/link';
 
 const Profile = ({ animal, day }) => {
+    console.log(document.cookie);
     return (
         <Layout>
             <h2 className='title'>Profile</h2>
@@ -12,15 +13,13 @@ const Profile = ({ animal, day }) => {
     );
 };
 
-export async function getStaticProps(context) {
-    const { animal, day } = context.query;
-
-    return {
-        props: {
-            animal: animal,
-            day: day,
-        }
-    }
-};
+// export async function getStaticProps() {
+//     return {
+//         props: {
+//             animal: "cat",
+//             day: "friday",
+//         }
+//     }
+// };
 
 export default Profile;
