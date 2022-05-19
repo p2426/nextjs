@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import EdgeFunction from '../components/edge-function'
+import ServerlessFunction from '../components/serverless-function'
 
 export default function Home() {
   return (
@@ -12,16 +14,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <h2 className={styles.title}>
+          Serverless, Edge functions and middleware
+        </h2>
 
-        <div className={styles.grid}>
+        <div className={styles.description}>
+          <EdgeFunction/>
+          <ServerlessFunction/>
+        </div>
+
+        {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -49,7 +52,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer className={styles.footer}>
