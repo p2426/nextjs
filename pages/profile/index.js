@@ -1,13 +1,17 @@
 import Layout from '../../components/layout'
 import Link from 'next/link';
 
-const Profile = ({ animal, day }) => {
-    console.log(document.cookie);
+const Profile = () => {
+
+    const getCookie = (target) => {
+        return document.cookie.split('; ').find(row => row.startsWith(`${target}=`)).split('=')[1];
+    };
+
     return (
         <Layout>
             <h2 className='title'>Profile</h2>
-            <p>{animal}</p>
-            <p>{day}</p>
+            <p>{`Some targeted information about super cute ${getCookie('animal')}`}</p>
+            <p>{`Remember your favourite day? Here's what's going on around town on ${getCookie('day')}`}</p>
             <Link href='/'>Home</Link>
         </Layout>
     );
