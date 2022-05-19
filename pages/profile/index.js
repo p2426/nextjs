@@ -4,7 +4,9 @@ import Link from 'next/link';
 const Profile = () => {
 
     const getCookie = (target) => {
-        return document.cookie.split('; ').find(row => row.startsWith(`${target}=`)).split('=')[1];
+        if (typeof window !== 'undefined') {
+            return document.cookie.split('; ').find(row => row.startsWith(`${target}=`)).split('=')[1];
+        }
     };
 
     return (
