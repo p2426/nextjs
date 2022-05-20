@@ -22,8 +22,6 @@ export function middleware(request, event) {
         redirect.cookie(key, values[i]);
     });
 
-    // Avoid infinite loop by only redirecting if the query
-    // params were changed
     if (changed) {
         return redirect;
     }
